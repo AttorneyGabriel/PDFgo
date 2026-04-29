@@ -4,6 +4,8 @@ PDFgo is a local case-file parsing tool for lawyers. It converts PDFs, scanned i
 
 The project is designed around criminal case review workflows: page-level OCR, resumable processing, failure tracking, source-preserving Markdown, and fully local OCR through GLM-OCR on Apple Silicon.
 
+PDFgo outputs clean Markdown, making it especially suitable for Obsidian, Notion, Logseq, and other note-taking or knowledge-base tools. Parsed case files can be dropped into a vault/database, linked with tags, searched, reviewed, and reused by AI agents without format conversion.
+
 ## Privacy First
 
 PDFgo is designed for local deployment. By default, case materials are read from your computer, sent only to a local OCR service at `127.0.0.1`, and written back to your local output directory.
@@ -19,6 +21,7 @@ This matters for lawyers: confidential case files should not leave the machine d
 - Page-level progress cache and retry support
 - Failed pages recorded in `failed_pages`
 - YAML frontmatter and page markers in output Markdown
+- Obsidian/Notion friendly Markdown output
 - Audio/video transcription through `faster-whisper`
 - Local-first: no case materials are uploaded by PDFgo itself
 - No PaddleOCR/Baidu dependency in the core workflow
