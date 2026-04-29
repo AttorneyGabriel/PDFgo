@@ -1,0 +1,11 @@
+# PDFgo 默认配置
+watermark_keywords:
+  - "示例水印文字"
+
+name_fixes: {}
+term_fixes: {}
+date_year: "2026"
+exclude_dirs:
+  - "案件视频"
+
+whisper_model: "base"  # tiny / base / small / medium
