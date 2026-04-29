@@ -1,10 +1,10 @@
 # PDFgo
 
-PDFgo is a local case-file parsing tool for lawyers. It converts PDFs, scanned images, Word/Excel files, audio, and video into Markdown that can be read by humans and AI agents.
+PDFgo is a local case-file parsing tool and a powerful skill for lawyers building private legal knowledge bases. It converts PDFs, scanned images, Word/Excel files, audio, and video into Markdown that can be read by humans, local wiki systems, RAG pipelines, and AI agents.
 
-The project is designed around criminal case review workflows: page-level OCR, resumable processing, failure tracking, source-preserving Markdown, and fully local OCR through GLM-OCR on Apple Silicon.
+The project is designed around criminal case review and local legal knowledge-base deployment: page-level OCR, resumable processing, failure tracking, source-preserving Markdown, and fully local OCR through GLM-OCR on Apple Silicon.
 
-PDFgo outputs clean Markdown, making it especially suitable for Obsidian, Notion, Logseq, and other note-taking or knowledge-base tools. Parsed case files can be dropped into a vault/database, linked with tags, searched, reviewed, and reused by AI agents without format conversion.
+PDFgo outputs clean Markdown, making it especially suitable for Obsidian, Notion, Logseq, local wiki systems, and LLM knowledge-base deployments. Parsed case files can be dropped into a vault/database, indexed by local RAG tools, linked with tags, searched, reviewed, and reused by AI agents without format conversion.
 
 ## Privacy First
 
@@ -17,11 +17,14 @@ This matters for lawyers: confidential case files should not leave the machine d
 ## Highlights
 
 - Local OCR service based on GLM-OCR and `mlx-vlm`
+- Powerful local knowledge-base skill for lawyers
+- Built for case review, legal document parsing, and private law-firm knowledge bases
 - Batch PDF and image OCR to Markdown
 - Page-level progress cache and retry support
 - Failed pages recorded in `failed_pages`
 - YAML frontmatter and page markers in output Markdown
-- Obsidian/Notion friendly Markdown output
+- Obsidian/Notion/wiki friendly Markdown output
+- Ready for local LLM knowledge bases and RAG pipelines
 - Audio/video transcription through `faster-whisper`
 - Local-first: no case materials are uploaded by PDFgo itself
 - No PaddleOCR/Baidu dependency in the core workflow
@@ -44,6 +47,24 @@ POST http://127.0.0.1:11500/api/v3/chat/completions
 ```
 
 See [skill.md](skill.md) for the full deployment notes.
+
+## Local Knowledge Base
+
+PDFgo is designed to be the parsing layer before a local legal knowledge base:
+
+```text
+case PDFs / scans / images / audio / video
+  ↓
+PDFgo local parsing
+  ↓
+Markdown case materials
+  ↓
+Obsidian / Notion / Logseq / local wiki
+  ↓
+local LLM knowledge base / RAG / agent workflow
+```
+
+Because the output is plain Markdown, it can be indexed by many local LLM tools, vector databases, desktop wiki systems, and agent frameworks. This makes PDFgo suitable for building a private, searchable case-file wiki without uploading confidential materials.
 
 ## Supported Inputs
 
