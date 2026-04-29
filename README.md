@@ -4,6 +4,14 @@ PDFgo is a local case-file parsing tool for lawyers. It converts PDFs, scanned i
 
 The project is designed around criminal case review workflows: page-level OCR, resumable processing, failure tracking, source-preserving Markdown, and fully local OCR through GLM-OCR on Apple Silicon.
 
+## Privacy First
+
+PDFgo is designed for local deployment. By default, case materials are read from your computer, sent only to a local OCR service at `127.0.0.1`, and written back to your local output directory.
+
+PDFgo does not upload PDFs, images, audio, video, or generated Markdown to a cloud OCR service, cloud LLM, or third-party API unless you explicitly change the OCR endpoint yourself.
+
+This matters for lawyers: confidential case files should not leave the machine during OCR parsing.
+
 ## Highlights
 
 - Local OCR service based on GLM-OCR and `mlx-vlm`
@@ -12,7 +20,7 @@ The project is designed around criminal case review workflows: page-level OCR, r
 - Failed pages recorded in `failed_pages`
 - YAML frontmatter and page markers in output Markdown
 - Audio/video transcription through `faster-whisper`
-- No case materials are uploaded by PDFgo itself
+- Local-first: no case materials are uploaded by PDFgo itself
 - No PaddleOCR/Baidu dependency in the core workflow
 
 ## Quick Start
